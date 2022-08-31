@@ -21,7 +21,9 @@ export class GoalComponent implements OnInit {
   ];
 
   //Toggle description function
-  showDescription(index: number) {
+  toggleDescription(index: number) {
+
+    this.goals[index].showDescription = !this.goals[index].showDescription;
     
   }
 

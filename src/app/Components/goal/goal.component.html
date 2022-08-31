@@ -11,8 +11,8 @@
             <ul *ngFor="let goal of goals, let i = index">
                 <li>
                     <p><strong>{{goal.name | uppercase}}</strong></p>
-                    <app-goal-detail *ngIf="showDescription(i)"></app-goal-detail>
-                    <button class="btn btn-outline-primary" (click)="showDescription(i)">View details</button>
+                    <app-goal-detail [goal]="goal" *ngIf="goal.showDescription"></app-goal-detail>
+                    <button class="btn btn-outline-primary" (click)="toggleDescription(i)">View details</button>
 
                 </li>
             </ul>
