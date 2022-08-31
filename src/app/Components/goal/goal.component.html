@@ -8,6 +8,12 @@
         <!-- Goals collumn -->
         <div class="col-md-6">
 
+            <ul *ngFor="let goal of goals">
+                <li>
+                    <p><strong>{{goal.name | uppercase}}</strong></p>
+                </li>
+            </ul>
+
         </div>
 
         <!-- Adding goals form -->
