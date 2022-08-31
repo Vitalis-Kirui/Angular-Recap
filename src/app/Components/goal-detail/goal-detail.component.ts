@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Goal } from 'src/app/Classes/goal';
 
 @Component({
@@ -9,7 +9,18 @@ import { Goal } from 'src/app/Classes/goal';
 export class GoalDetailComponent implements OnInit {
 
   //Input binding property
-  @Input() goal !: Goal
+  @Input() goal !: Goal;
+
+  //Deleting goal functionality
+  //Output binding property
+  @Output() deletingGoal = new EventEmitter<boolean>();
+
+  deleteGoal(toDelete: boolean) {
+    
+    this.deletingGoal.emit(toDelete);
+    
+  }
+
 
   constructor() { }
 
