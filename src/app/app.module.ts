@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { GoalComponent } from './Components/goal/goal.component';
 import { GoalDetailComponent } from './Components/goal-detail/goal-detail.component';
 import { StrikethroughDirective } from './Directives/strikethrough.directive';
+import { GoalFormComponent } from './Components/goal-form/goal-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,10 +15,12 @@ import { StrikethroughDirective } from './Directives/strikethrough.directive';
     GoalComponent,
     GoalDetailComponent,
     StrikethroughDirective,
+    GoalFormComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
