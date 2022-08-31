@@ -10,7 +10,7 @@
 
             <ul *ngFor="let goal of goals, let i = index">
                 <li>
-                    <p><strong>{{goal.name | uppercase}}</strong></p>
+                    <p appStrikethrough><strong>{{goal.name | uppercase}}</strong></p>
                     <app-goal-detail [goal]="goal" *ngIf="goal.showDescription" (deletingGoal)="confirmDeletion($event, i)"></app-goal-detail>
                     <button class="btn btn-outline-primary" (click)="toggleDescription(i)">View details</button>
                 </li>
