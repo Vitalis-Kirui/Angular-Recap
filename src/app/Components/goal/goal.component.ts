@@ -8,6 +8,8 @@ import { Goal } from 'src/app/Classes/goal';
 })
 export class GoalComponent implements OnInit {
 
+  //Goals array
+
   goals: Goal[] = [
 
     new Goal(1, "Angular", "Master Angular in less than a month's time", new Date(2022, 8, 30)),
@@ -17,6 +19,11 @@ export class GoalComponent implements OnInit {
     new Goal(5, "React", "Master React in the shortest time possible to be option 2 frontend technology.", new Date(2023, 0, 31))
     
   ];
+
+  //Toggle description function
+  showDescription(index: number) {
+    
+  }
 
   constructor() { }
 
