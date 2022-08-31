@@ -38,6 +38,15 @@ export class GoalComponent implements OnInit {
     
   }
 
+  //Adding goal functionality
+  addNewGoal(goal: Goal) {
+    let goalLength = this.goals.length;
+    goal.id = goalLength + 1;
+    goal.completionDate = new Date(goal.completionDate);
+
+    this.goals.push(goal)
+  }
+
   constructor() { }
 
   ngOnInit(): void {
