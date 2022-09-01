@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Goal } from 'src/app/Classes/goal';
 import { Quote } from 'src/app/Classes/quote';
 import { AlertService } from 'src/app/Services/alert.service';
@@ -37,6 +38,15 @@ export class GoalComponent implements OnInit {
     
   }
 
+  //passing parameters
+
+  viewDetails(index: number) {
+    
+    this.router.navigate(["goals/", index]);
+    
+  }
+
+
   //Deleting goal functionality after catching todelete goal event
   deleteGoal(index: number) {
     
@@ -60,7 +70,7 @@ export class GoalComponent implements OnInit {
     this.goals.push(goal)
   }
 
-  constructor(private service: GoalService, private alert : AlertService , private quotesService : QuoteService) { 
+  constructor(private service: GoalService, private alert : AlertService , private quotesService : QuoteService , private router : Router) { 
     this.goals = this.service.getGoals();
     this.alertService = alert;
   }
