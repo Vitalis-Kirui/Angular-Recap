@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Goal } from 'src/app/Classes/goal';
+import { Quote } from 'src/app/Classes/quote';
 import { AlertService } from 'src/app/Services/alert.service';
 import { GoalService } from 'src/app/Services/goal.service';
+import { QuoteService } from 'src/app/Services/quote.service';
 
 @Component({
   selector: 'app-goal',
@@ -13,6 +15,8 @@ export class GoalComponent implements OnInit {
   goals!: Goal[];
 
   alertService!: AlertService;
+
+  quote!: Quote;
 
   //Goals array
 
@@ -56,12 +60,16 @@ export class GoalComponent implements OnInit {
     this.goals.push(goal)
   }
 
-  constructor(private service: GoalService, private alert : AlertService) { 
+  constructor(private service: GoalService, private alert : AlertService , private quotesService : QuoteService) { 
     this.goals = this.service.getGoals();
     this.alertService = alert;
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    this.quotesService.makeRequest();
+    this.quote = this.quotesService.quote;
+
   }
 
 }
