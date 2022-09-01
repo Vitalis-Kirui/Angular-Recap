@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Goal } from 'src/app/Classes/goal';
+import { AlertService } from 'src/app/Services/alert.service';
 import { GoalService } from 'src/app/Services/goal.service';
 
 @Component({
@@ -10,6 +11,8 @@ import { GoalService } from 'src/app/Services/goal.service';
 export class GoalComponent implements OnInit {
 
   goals!: Goal[];
+
+  alertService!: AlertService;
 
   //Goals array
 
@@ -37,6 +40,9 @@ export class GoalComponent implements OnInit {
 
     if (confirmation) {
       this.goals.splice(index, 1);
+
+      //Alert service
+      this.alertService.alertMe("The goal has been successfully deleted.")
     }
     
   }
@@ -50,8 +56,9 @@ export class GoalComponent implements OnInit {
     this.goals.push(goal)
   }
 
-  constructor(private service: GoalService) { 
+  constructor(private service: GoalService, private alert : AlertService) { 
     this.goals = this.service.getGoals();
+    this.alertService = alert;
   }
 
   ngOnInit(): void {
