@@ -1,6 +1,15 @@
-    <!-- Details section -->
-    <p>{{goal.description}}</p>
-    <p>This goal will be completed on <strong>{{goal.completionDate | date | uppercase}}.</strong></p>
+<div class="container text-center">
 
-    <!-- Delete button
-    <button class="btn btn-outline-danger" (click)="deleteGoal(true)">Delete Goal</button> -->
+    <h4 class="text-center">{{goal.name}}</h4>
+    <hr>
+            <!-- Details section -->
+            <div class="details">
+                
+                <p>{{goal.description}}</p>
+                <p>This goal will be completed on <strong>{{goal.completionDate | date | uppercase}}.</strong></p>
+                
+                <!-- Delete button
+                                <button class="btn btn-outline-danger" (click)="deleteGoal(true)">Delete Goal</button> -->
+
+            </div>
+</div>

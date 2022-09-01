@@ -40,9 +40,9 @@ export class GoalComponent implements OnInit {
 
   //passing parameters
 
-  viewDetails(index: number) {
+  viewDetails(id: number) {
     
-    this.router.navigate(["goals/", index]);
+    this.router.navigate(["goals/", id]);
     
   }
 
