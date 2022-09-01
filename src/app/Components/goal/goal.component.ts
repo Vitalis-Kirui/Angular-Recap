@@ -38,7 +38,7 @@ export class GoalComponent implements OnInit {
   }
 
   //Deleting goal functionality after catching todelete goal event
-  confirmDeletion(toDelete: boolean, index: number) {
+  deleteGoal(index: number) {
     
     let confirmation = confirm(`Are you sure you want to delete ${this.goals[index].name}?`);
 
