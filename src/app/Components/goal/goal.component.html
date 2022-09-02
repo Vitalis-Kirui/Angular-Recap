@@ -1,7 +1,9 @@
 <div class="container">
 
-    <h1 class = "text-center">My Goals</h1>
-    <hr id="topHeading">  
+    <div class="top">
+        <h1 class="text-center">My Goals</h1>
+        <hr id="topHeading">
+    </div>
 
     <div class="row">
 
@@ -16,6 +18,7 @@
                     <!-- Button -->
                     <button class="btn btn-outline-danger" (click)="deleteGoal(i)">Delete Goal</button>
                     <button class="btn btn-outline-primary" (click)="viewDetails(goal.id)">View details</button>
+                    <hr width ="70%">
                 </li>
             </ul>
 
